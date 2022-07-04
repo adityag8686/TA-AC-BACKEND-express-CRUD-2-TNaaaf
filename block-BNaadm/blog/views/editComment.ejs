@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Assignment</title>
+    <link rel="stylesheet" href="/blog/public/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="flex">
+        <a href="/">
+          <button>Home</button>
+        </a>
+        <a href="/article">
+          <button>All Articles</button>
+        </a>
+      </nav>
+    </header>
+    <main class="container">
+      <h1>Update Comment</h1>
+      <div class="comment">
+        <form action="/comment/<%= comment._id %>" method="POST">
+          <textarea
+            name="content"
+            id=""
+            cols="30"
+            rows="5"
+            placeholder="Enter comment"
+          >
+          <%= comment.content%>
+          </textarea>
+          <input type="submit" value="Update Comment" />
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

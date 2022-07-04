@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment</title>
+  <link rel="stylesheet" href="/blog/public/stylesheets/style.css" />
+</head>
+<body>
+  <header class="header">
+      <nav class="flex">
+        <a href="/">
+          <button>Home</button>
+        </a>
+        <a href="/article">
+          <button>All Articles</button>
+        </a>
+        <a href="/article/new">
+          <button>Add Article</button>
+        </a>
+      </nav>
+  </header>
+    <main class="container">
+      <div class="flex">
+          <% article.forEach((a) => { %>
+            <div class="article">
+              <h2>Title: <%= a.title %></h2>
+              <p>Description: <%= a.description %> </p>
+              <p>Tags: <%= a.tags %> </p>
+              <p>Author: <%= a.author %> </p>
+              <a href="/article/<%= a._id %>">
+                <button>Read More</button>
+              </a>
+            </div>
+          <% })%>
+      </div>
+  </body>
+</html>
