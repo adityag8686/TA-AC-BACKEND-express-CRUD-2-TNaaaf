@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment</title>
+    <link rel="stylesheet" href="/blog/public/stylesheets/style.css" />
+</head>
+<body>
+    <header class="header">
+        <nav class="flex">
+        <a href="/">
+            <button>Home</button>
+        </a>
+        <a href="/article">
+            <button>All Articles</button>
+        </a>
+        </nav>
+    </header>
+    <main class="container">
+    <div class="article">
+        <h2>Title: <%= article.title %></h2>
+        <p>Description: <%= article.description %></p>
+        <p>Tags: <%= article.tags %></p>
+        <p>Author: <%= article.author %></p>
+        <p>Likes: <%= article.likes %></p>
+        <a href="/article/<%= article._id %>/edit">
+        <button>Edit</button>
+        </a>
+        <a href="/article/<%= article._id %>/delete">
+        <button>Delete</button>
+        </a>
+        <a href="/article/<%= article._id %>/likes">
+        <button>Like</button>
+        </a>
+        <a href="/article/<%= article._id %>/dislike">
+        <button>Dislike</button>
+        </a>
+    </div>
+    <div class="comment">
+        <form action="/article/<%= article._id%>/comments" method="post">
+        <textarea
+            name="content"
+            id=""
+            cols="30"
+            rows="5"
+            placeholder="Enter comment"
+        >
+        </textarea>
+        <input type="submit" value="Submit" />
+        </form>
+    </div>
+
+    <h3>Comments</h3>
+    <hr />
+
+    <% comments.forEach(comment => { %>
+    <div>
+        <p><%= comment.content%></p>
+        <a href="/comment/<%= comment._id%>/edit">
+        <button>Edit</button>
+        </a>
+        <a href="/comment/<%= comment._id%>/delete">
+        <button>Delete</button>
+        </a>
+    </div>
+    <% }) %>
+    </main>
+</body>
+</html>
