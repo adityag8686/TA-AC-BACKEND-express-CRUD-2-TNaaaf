@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment</title>
+    <link rel="stylesheet" href="/blog/public/stylesheets/style.css" />
+</head>
+<body>
+    <header class="header">
+        <nav class="flex">
+        <a href="/">
+            <button>Home</button>
+        </a>
+        <a href="/article">
+            <button>All Articles</button>
+        </a>
+        <a href="/article/new">
+            <button>Add Article</button>
+        </a>
+        </nav>
+    </header>
+    <main class="main container">
+        <fieldset class="form">
+        <form action="/article/new" method="post">
+            <input type="text" name="title" id="" placeholder="Title" />
+            <input
+            type="text"
+            name="description"
+            id=""
+            placeholder="Description"
+            />
+            <input
+            type="text"
+            name="tags"
+            id=""
+            placeholder="Tags: example(react, node, express)"
+            />
+            <input type="text" name="author" id="" placeholder="Name of Author" />
+            <div>
+            <input type="submit" value="Add Article" />
+            </div>
+        </form>
+        </fieldset>
+    </main>
+</body>
+</html>
